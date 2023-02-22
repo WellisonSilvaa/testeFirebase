@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "testefirebase-e695a": {
+      "hosting": {
+        "app": [
+          "testefirebase-e695a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "testefirebase-e695a"
+  }
+}

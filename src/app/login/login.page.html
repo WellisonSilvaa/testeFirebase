@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="credentials" (ngSubmit)="login()">
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(credentials.value.email.dirty || credentials.value.email.touched) && credentials.value.email.errors">Emmail is invalid</ion-note>
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(credentials.value.password.dirty || credentials.value.password.touched) && credentials.value.password.errors">Password is invalid</ion-note>
+    </ion-item>
+
+    <ion-button expand="fill" type="submit">Login</ion-button>
+    <ion-button (click)="register()" type="button" expand="fill" fill="clear" shape="round">Cadastro</ion-button>
+
+  </form>
+</ion-content>

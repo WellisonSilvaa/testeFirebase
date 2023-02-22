@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+                <ion-icon name="key" color="danger"></ion-icon>
+              Cadastro</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="credentials" autocomplete="off">
+              <ion-item color="">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+              </ion-item>
+                <div class="erros">
+                  {{formError.email}}
+                </div>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <div class="erros">
+                {{formError.password}}
+              </div>
+              <ion-button color="danger" expand="block" class="ion-marign-top" [disabled]="credentials.invalid" (click)="register()">Cadastrar</ion-button>
+              <ion-button color="danger" fill="clear" expand="block" class="ion-marign-top" (click)="goToLoginPage()">Go to Login</ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
